@@ -10,20 +10,20 @@ public class ServerBootstrap {
 	private static final int DEFAULT_SERVER_PORT = 8080;
 
 	public static void main(String[] args) throws Exception {
-		
+
 		int serverPort = DEFAULT_SERVER_PORT;
 		if(args.length == 1) {
 			serverPort = Integer.parseInt(args[0]);
 		}
-		
+
 		System.out.println("Running Jetty server on port " + serverPort);
-		
+
 		Server server = new Server(serverPort);
 		WebAppContext root = new WebAppContext();
-	    
-	    final URL webappUrl = ServerBootstrap.class.getClassLoader().getResource("webapp");
-	    final String webappUrlStr = webappUrl.toExternalForm();
-	    
+
+		final URL webappUrl = ServerBootstrap.class.getClassLoader().getResource("webapp");
+		final String webappUrlStr = webappUrl.toExternalForm();
+
 		root.setContextPath("/");
 		root.setDescriptor(webappUrlStr + "WEB-INF/web.xml");
 		root.setResourceBase(webappUrlStr);
