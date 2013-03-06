@@ -8,4 +8,4 @@ How to compile and run
 	mvn clean package
 	java -jar target/embedded-jetty-example.jar 8080
 
-Then point your browser to http://localhost:8080
+Then point your browser to http://localhost:8080.
