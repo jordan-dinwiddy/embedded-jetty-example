@@ -18,7 +18,7 @@ public class ServerBootstrap {
 		
 		System.out.println("Running Jetty server on port " + serverPort);
 		
-		Server server = new Server(8080);
+		Server server = new Server(serverPort);
 		WebAppContext root = new WebAppContext();
 	    
 	    final URL webappUrl = ServerBootstrap.class.getClassLoader().getResource("webapp");
